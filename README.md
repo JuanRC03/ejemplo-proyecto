@@ -1,4 +1,4 @@
-﻿# Practica No Guiada
+﻿# Practica
 ## Abrir proyecto con Docker
 Para abir el proyecto con docker debes tener instalado previamnte GIT y Docker Desktop(Tenerlo ya abierto)
 ### 1. Descarga el proyecto
