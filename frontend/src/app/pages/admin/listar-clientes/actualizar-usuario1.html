@@ -1,0 +1,45 @@
+<mat-list class="estilo-mat-list" style="padding: 0; margin-bottom: 15px; ">
+  <mat-list-item class="estilo-mat-item" style="color: black;">
+
+    <div mat-line style="padding-right: 30px;">Registrar</div>
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+      <button mat-icon-button mat-dialog-close matTooltip="White" color="White"
+        aria-label="Example icon-button with a heart icon">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </mat-list-item>
+</mat-list>
+<mat-divider></mat-divider>
+
+<mat-dialog-content class="mat-typography" style="max-width: 400px;">
+  <br>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Email</mat-label>
+    <input required [(ngModel)]="dataInput.email" name="dato1" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Cédula</mat-label>
+    <input required [(ngModel)]="dataInput.cedula" name="dato3" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="w100" appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input required [(ngModel)]="dataInput.nombre" name="dato4" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="w100" appearance="outline">
+    <mat-label>Apellido</mat-label>
+    <input required [(ngModel)]="dataInput.apellido" name="dato5" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="w100" appearance="outline">
+    <mat-label>Fecha de nacimiento</mat-label>
+    <input required [(ngModel)]="dataInput.fechaNacimiento" name="dato6" type="date" matInput>
+  </mat-form-field>
+
+</mat-dialog-content>
+<div class="container text-center">
+  <button type="submit" mat-raised-button color="accent" (click)="formSubmit()">Registrar</button>
+</div>

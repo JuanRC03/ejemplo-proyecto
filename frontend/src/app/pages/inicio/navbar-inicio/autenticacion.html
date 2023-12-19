@@ -1,0 +1,37 @@
+
+<section class="joinnow">
+  
+<form (ngSubmit) = "formSubmit()">
+  <h1 class = "text-center">Inicio de sesión</h1>
+
+  <mat-form-field class="w100" appearance="outline">
+    
+    <mat-label>Email</mat-label>
+    <input [(ngModel)] = "loginData.email" name = "usuario"  matInput placeholder="Digite su email">
+    <mat-hint>El email debe ser valido</mat-hint>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field class="w100" appearance="outline">
+    <mat-label>Contraseña</mat-label>
+    <input
+      [(ngModel)] = "loginData.contrasenia "
+      [type]="hidePass ? 'password' : 'text'"
+      name="pass1"
+      matInput
+      placeholder="Ingrese su contraseña antigua"
+    >
+    <button mat-icon-button matSuffix (click)="hidePass = !hidePass" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePass">
+      <mat-icon>{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  <br><br>
+  <div class = "container text-center">
+    <button type = "submit" mat-raised-button color="accent" >Iniciar sesión</button>
+    <button mat-dialog-close style = "margin-left: 20px;" mat-raised-button color="primary">Cancelar</button>
+  </div>
+</form>
+<div class = "container text-center" style="margin-top: 20px;">
+        
+  
+</div>
+</section>

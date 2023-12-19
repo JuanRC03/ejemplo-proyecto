@@ -1,0 +1,74 @@
+<mat-toolbar>
+
+  <span>Perfil del empleado</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button color="primary" (click)="openPremioUsuario()">Ver premios</button>
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="navegarPagina()">
+      <mat-icon>public</mat-icon>
+      <span>Pagina</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Salir</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+
+<div class="joinnow">
+  <div class="col-lg-7 m-auto shadow-lg">
+    <div class="row">
+      <form style="max-width: 400px;">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input required [(ngModel)]="userData.email" name="email" matInput placeholder="Digite su email">
+              <mat-hint>El email debe ser único</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Cedula</mat-label>
+              <input required [(ngModel)]="userData.cedula" name="cedula" matInput placeholder="Digite su cedula">
+            </mat-form-field>
+
+            <mat-form-field class="w100" appearance="outline">
+              <mat-label>Nombre</mat-label>
+              <input required [(ngModel)]="userData.nombre" name="nombre" matInput placeholder="Digite su nombre">
+            </mat-form-field>
+
+            <mat-form-field class="w100" appearance="outline">
+              <mat-label>Apellido</mat-label>
+              <input required [(ngModel)]="userData.apellido" name="apellido" matInput placeholder="Digite su apellido">
+            </mat-form-field>
+
+            <mat-form-field class="w100" appearance="outline">
+              <mat-label>Fecha de nacimiento</mat-label>
+              <input required type="date" matInput name="fechaInicio" placeholder="Ingrese la fecha de nacimiento"
+                [(ngModel)]="userData.fechaNacimiento">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="container text-center">
+
+        </div>
+        <section>
+          <div class="example-button-row">
+            <button mat-raised-button color="basic" (click)="registroDatos()">Actualizar Datos</button>
+            <button *ngIf="validador==true" mat-raised-button color="primary" (click)="crearRegistro()">Registrar
+              ingreso</button>
+            <span *ngFor="let registro of registrosData">
+              <button *ngIf="validador==false" mat-raised-button color="accent"
+                (click)="finalizarRegistro(registro.idRegistro)">Registrar salida</button>
+            </span>
+          </div>
+        </section>
+      </form>
+    </div>
+  </div>
+</div>

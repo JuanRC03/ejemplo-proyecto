@@ -1,0 +1,41 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav *ngIf="menuVisible" #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+      <mat-nav-list style="padding: 0;">
+        <h4 style="text-align:center; margin-top: 30px;">
+          Menu</h4>
+        <div class=" navbar-light bg-light">
+          <button mat-list-item routerLink="/perfil-usuario">
+            Perfil
+          </button>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar>
+        <span class="example-spacer"></span>
+        <span></span>
+        <span class="example-spacer"></span>
+        <button type="button" (click)="toggleBoton()" aria-label="Toggle sidenav" mat-icon-button
+          (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="navegarPagina()">
+            <span>Página</span>
+          </button>
+          <button mat-menu-item (click)="logout()">
+            <span>Salir</span>
+          </button>
+        </mat-menu>
+      </mat-toolbar>
+      <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

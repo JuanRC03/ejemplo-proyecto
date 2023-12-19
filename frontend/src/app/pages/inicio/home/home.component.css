@@ -1,0 +1,56 @@
+.w100{
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .w100{
+    width: 100%;
+  }
+
+  .circle-image {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%;
+    overflow: hidden; 
+  }
+  .image-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 20px;
+  }
+  
+  mat-slider {
+    width: 300px;
+  }
+
+  .full-width-table {
+    width: 100%;
+    min-width: 800px;
+  }
+  
+  
+  .table-container {
+    overflow-x: auto; 
+  }
+  
+  .table {
+    
+    width: 100%;
+  }
+  
+  .w100{
+    width: 100%;
+  }
+
+  .example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+.example-disabled {
+  display: inline-block;
+}

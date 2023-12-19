@@ -1,0 +1,59 @@
+<mat-toolbar >
+  
+    <span>Practica</span>
+    <span class="example-spacer"></span>
+  
+    <button
+      routerLink=""
+      mat-button
+      style="margin-right: 10px"
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+    Home
+    </button>
+    <!--<button
+      routerLink="/home1"
+      mat-button
+      style="margin-right: 10px"
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+    Home1
+    </button>-->
+
+    <button
+      *ngIf = "!isLoggedIn"
+      (click) = "openDialogAutenticacion()" 
+      mat-button
+      style="margin-right: 10px"
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+    Iniciar sesión
+    </button>
+  
+    <button
+      *ngIf = "isLoggedIn"
+      (click) = "logout()"
+      mat-button
+      style="margin-right: 10px"
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      Cerrar sesión
+    </button>
+
+    <button
+      *ngIf = "isLoggedIn && user"
+      (click) = "panelContro()"
+      mat-button
+      style="margin-right: 10px"
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      Panel de control
+    </button>
+  
+  </mat-toolbar>
+  
