@@ -41,27 +41,15 @@ Desde un navegador accede a la aplicacion web a traves de http://localhost:8081/
 
 ### 7. Acceso como administrador
 Para acceder como administrador, tiene que ingresar las siguintes credenciales en el login:
-- Usuario:
+- Email
 ```
-admin
+admin@gmail.com
 ```
 - Contraseña:
 ```
 12345
 ```
-### 8. Acceso como empleado
-Para acceder como empleado, primero el administrador debe crear su cuenta. Una vez creada la cuenta acceda al login con el usuario y la contraseña registrada.
-Pero para efectuar la prueba de la comunicacion con la api externa, se registro un empleado que ya tiene la semana completa, por ello debe acceder con las siguintes credenciales y terminar el turno que esta abierto:
-Credenciales:
 
-- Usuario:
-```
-jmaigua
-```
-- Contraseña:
-```
-12345
-```
 
 
 
@@ -83,14 +71,14 @@ Estas son las instrucciones para ejecutar la aplicación de forma local en tu si
    npm install
    ng serve
    ```
-5. Para ejecutar el backend, necesitas MySQL/XAMPP. Accede al panel de control de XAMPP y haz clic en "Start" para Apache y MySQL. Luego, en un navegador, accede a phpMyAdmin y crea una base de datos con el nombre "practica".
+5. Para ejecutar el backend, necesitas MySQL/XAMPP. Accede al panel de control de XAMPP y haz clic en "Start" para Apache y MySQL. Luego, en un navegador, accede a phpMyAdmin y crea una base de datos con el nombre "db-practica".
 
 6. Abre el backend (practica-back) con un IDE o editor de código, como NetBeans. Accede al archivo "application.properties" y realiza las siguientes modificaciones:
 
     - Comenta las siguientes líneas que sirven para ejecutar a traves de docker:
 
     ```
-    spring.datasource.url=jdbc:mysql://java_db:3306/practica
+    spring.datasource.url=jdbc:mysql://java_db:3306/db-practica
     spring.datasource.username=root
     spring.datasource.password=12345
     spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
@@ -102,7 +90,7 @@ Estas son las instrucciones para ejecutar la aplicación de forma local en tu si
     - Descomenta las siguientes líneas:
 
     ```
-    spring.datasource.url=jdbc:mysql://localhost:3306/practica
+    spring.datasource.url=jdbc:mysql://localhost:3306/db-practica
     spring.datasource.username=root
     spring.datasource.password=12345
     spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
@@ -120,23 +108,11 @@ Estas son las instrucciones para ejecutar la aplicación de forma local en tu si
 8. En el navegador, accede a la aplicación a través de http://localhost:4200/.
 
 9. Acceso como administrador. Para acceder como administrador, tiene que ingresar las siguintes credenciales en el login:
-    - Usuario:
+    - Email
     ```
-    admin
+    admin@gmail.com
     ```
     - Contraseña:
     ```
     12345
     ```
-10. Acceso como empleado, el administrador debe haber creado la cuenta de empleado
-Pero para efectuar la prueba de la comunicacion con la api externa, se registro un empleado que ya tiene la semana completa, por ello debe acceder con las siguintes credenciales y terminar el turno que esta abierto:
-Credenciales:
-
-- Usuario:
-```
-jmaigua
-```
-- Contraseña:
-```
-12345
-```
